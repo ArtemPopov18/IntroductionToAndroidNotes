@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">IntroductionToAndroidNotes</string>
+    <string name="note_1">Заметка №1</string>
+    <string name="note_2">Заметка №2</string>
+    <string name="note_3">Заметка №3</string>
+    <string name="note_4">Заметка №4</string>
+    <string name="note_5">Заметка №5</string>
+    <string name="note_date_1">01.05.2022</string>
+    <string name="note_date_2">02.05.2022</string>
+    <string name="note_date_3">03.05.2022</string>
+    <string name="note_date_4">04.05.2022</string>
+    <string name="note_date_5">05.05.2022</string>
+    <string name="note_description_1">Здесь должна находиться замеька №1</string>
+    <string name="note_description_2">Здесь должна находиться замеька №2</string>
+    <string name="note_description_3">Здесь должна находиться замеька №3</string>
+    <string name="note_description_4">Здесь должна находиться замеька №4</string>
+    <string name="note_description_5">Здесь должна находиться замеька №5</string>
 </resources>
