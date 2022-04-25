@@ -1,8 +1,10 @@
-package com.popov.introductiontoandroidnotes;
+package com.popov.introductiontoandroidnotes.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.popov.introductiontoandroidnotes.R;
 
 public class MainActivity extends AppCompatActivity {
 

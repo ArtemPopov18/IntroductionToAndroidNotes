@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_elevation">0dp</dimen>
+    <dimen name="padding_horizontal">7dp</dimen>
+    <dimen name="padding_vertical">5dp</dimen>
+    <dimen name="width_note_title">218dp</dimen>
+    <dimen name="height_note_title">62dp</dimen>
+    <dimen name="Size_text_note_date">30sp</dimen>
+</resources>
