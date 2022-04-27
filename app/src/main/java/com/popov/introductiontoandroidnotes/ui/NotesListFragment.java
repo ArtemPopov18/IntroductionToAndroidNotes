@@ -1,7 +1,6 @@
 package com.popov.introductiontoandroidnotes.ui;
 
 import android.content.Context;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +21,6 @@ import java.util.List;
 public class NotesListFragment extends Fragment {
 
     public static final String NOTES_CLICKED_KEY = "NOTES_CLICKED_KEY";
-    private static final String SELECTED_NOTE = "SELECTED_NOTE";
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -50,14 +48,11 @@ public class NotesListFragment extends Fragment {
             itemView.findViewById(R.id.root).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        Bundle bundle = new Bundle();
-                        bundle.putParcelable(SELECTED_NOTE, note);
-                        getParentFragmentManager()
-                                .setFragmentResult(NOTES_CLICKED_KEY, bundle);
-                    } else {
-                        NoteDetailsActivity.show(requireContext(), note);
-                    }
+                    getParentFragmentManager().
+                            beginTransaction().
+                            replace(R.id.fragment_container, NoteDetailsFragment.newInstance(note)).
+                            addToBackStack("details").
+                            commit();
                 }
             });
 

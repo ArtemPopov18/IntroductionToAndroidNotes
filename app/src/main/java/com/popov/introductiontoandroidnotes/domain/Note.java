@@ -6,6 +6,7 @@ import android.os.Parcelable;
 import androidx.annotation.StringRes;
 
 public class Note implements Parcelable {
+
     public static final Creator<Note> CREATOR = new Creator<Note>() {
         @Override
         public Note createFromParcel(Parcel in) {
@@ -17,6 +18,7 @@ public class Note implements Parcelable {
             return new Note[size];
         }
     };
+
     private final String name;
     @StringRes
     private final int date;
