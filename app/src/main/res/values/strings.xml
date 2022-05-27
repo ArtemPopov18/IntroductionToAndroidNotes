@@ -15,4 +15,10 @@
     <string name="note_description_3">Здесь должна находиться замеька №3</string>
     <string name="note_description_4">Здесь должна находиться замеька №4</string>
     <string name="note_description_5">Здесь должна находиться замеька №5</string>
+    <string name="action_share">share</string>
+    <string name="action_info">info</string>
+    <string name="application_information">Информация о приложении</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="information">Это информация о этом приложении, надеюсь его никто никогда не увидит. Здесь я реализовал сингл активити и все это работает!</string>
 </resources>

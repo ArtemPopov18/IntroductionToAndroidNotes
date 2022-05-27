@@ -9,10 +9,12 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/purple_700"
             app:titleTextColor="@color/teal_200"
+            app:menu="@menu/menu_notes_list"
             app:title="@string/app_name" />
     </com.google.android.material.appbar.AppBarLayout>
 

@@ -1,11 +1,14 @@
 package com.popov.introductiontoandroidnotes.ui;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 
@@ -40,6 +43,27 @@ public class NoteDetailsFragment extends Fragment {
         title = view.findViewById(R.id.note_title);
         date = view.findViewById(R.id.note_date);
         description = view.findViewById(R.id.note_description);
+
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+
+        if (requireActivity() instanceof ToolbarHolder) {
+            ((ToolbarHolder)requireActivity()).setToolbar(toolbar);
+        }
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                if (menuItem.getItemId() == R.id.action_info){
+                    Toast.makeText(requireContext(), "info", Toast.LENGTH_LONG).show();
+                    return true;
+                }
+                if (menuItem.getItemId() == R.id.action_share){
+                    Toast.makeText(requireContext(), "share", Toast.LENGTH_LONG).show();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         getParentFragmentManager()
                 .setFragmentResultListener(NotesListFragment.NOTES_CLICKED_KEY, getViewLifecycleOwner(), new FragmentResultListener() {
