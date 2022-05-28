@@ -1,10 +1,13 @@
 package com.popov.introductiontoandroidnotes.ui;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -57,5 +60,38 @@ public class MainActivity extends AppCompatActivity implements ToolbarHolder {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
 
         actionBarDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        int count = getSupportFragmentManager().getBackStackEntryCount();
+
+        if (count == 0) {
+
+            new AlertDialog.Builder(this)
+                    .setTitle("Выход")
+                    .setMessage("Вы хотите выйти из приложения?")
+                    .setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            toast();
+                            MainActivity.super.onBackPressed();
+                        }
+                    })
+                    .setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    })
+                    .show();
+        } else {
+            getSupportFragmentManager().popBackStack();
+        }
+    }
+
+    public void toast() {
+        Toast.makeText(this, "Приложение закрыто", Toast.LENGTH_SHORT).show();
     }
 }

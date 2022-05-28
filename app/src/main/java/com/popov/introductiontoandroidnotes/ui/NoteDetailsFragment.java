@@ -47,17 +47,17 @@ public class NoteDetailsFragment extends Fragment {
         Toolbar toolbar = view.findViewById(R.id.toolbar);
 
         if (requireActivity() instanceof ToolbarHolder) {
-            ((ToolbarHolder)requireActivity()).setToolbar(toolbar);
+            ((ToolbarHolder) requireActivity()).setToolbar(toolbar);
         }
 
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                if (menuItem.getItemId() == R.id.action_info){
+                if (menuItem.getItemId() == R.id.action_info) {
                     Toast.makeText(requireContext(), "info", Toast.LENGTH_LONG).show();
                     return true;
                 }
-                if (menuItem.getItemId() == R.id.action_share){
+                if (menuItem.getItemId() == R.id.action_share) {
                     Toast.makeText(requireContext(), "share", Toast.LENGTH_LONG).show();
                     return true;
                 }
